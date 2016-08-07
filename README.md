@@ -8,7 +8,7 @@ The provider merges the request body and the request query parameters, and conve
 Of course, you can define some validation rules - with the built in ```ValidationServiceProvider``` ([learn more](http://silex.sensiolabs.org/doc/providers/validator.html)) -  on the DTO object, so when the controller action is triggered you will have a validated request object, because request validation is done first.
 If your request data was invalid then the provider will throw a ```\Gophry\Provider\DTO\InvalidRequestException```, so the server will response with status code ```422 Unprocessable Entity```, because this exception is th extension of ```\Symfony\Component\HttpKernel\Exception\UnprocessableEntityHttpException```.
 
-If you would like to handle those invalid requests on an other way, then you can configure the provider easily. The only thing you have to do is change the exception class value.
+If you would like to handle those invalid requests on an other way, then you can configure the provider easily (please see below). The only thing you have to do is to change the exception class value.
 
 ## Installation
 
@@ -25,6 +25,14 @@ You can simply register this service provider as a common Silex service provider
 ```php
 $app->register(new DTOServiceProvider());
 ```
+
+## Configure
+
+```php
+$app['gophry.invalid.request.exception.class'] = \My\Exception\Class;
+```
+
+> The first parameter of the exception is the message, the second one is the list of validation error.
 
 ## Simple use
 

@@ -4,6 +4,9 @@
         "psr-0" : {
             "Gophry\\Provider\\DTO" : "src"
         }
-    }
+    },
+    "require": {
+		"norbertkranitz/gophry-dto": "dev-master"
+	}
 }
 

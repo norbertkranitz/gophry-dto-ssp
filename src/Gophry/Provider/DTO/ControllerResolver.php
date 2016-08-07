@@ -68,7 +68,7 @@ class ControllerResolver extends BaseControllerResolver {
             }
         }
 		
-        $controller[0]->setAuthenticatedUser($request->user);
+        //$controller[0]->setAuthenticatedUser($request->user);
         
         return $arguments;
     }

@@ -12,7 +12,7 @@ class DTOServiceProvider implements ServiceProviderInterface {
             return new ControllerResolver($app);
         });
 
-        $app['gophry.invalid.request.exception.class'] = \Symfony\Component\HttpKernel\Exception\UnprocessableEntityHttpException::class;
+        $app['gophry.invalid.request.exception.class'] = InvalidRequestException::class;
     }
 
 }

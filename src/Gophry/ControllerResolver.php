@@ -1,6 +1,6 @@
 <?php
 
-namespace Gophry\Provider\DTO;
+namespace Gophry;
 
 use \Symfony\Component\HttpFoundation\Request;
 use \Symfony\Component\HttpKernel\Controller\ControllerResolverInterface;
@@ -41,6 +41,8 @@ class ControllerResolver extends BaseControllerResolver {
                 }
             } elseif ($param->getClass() && $param->getClass()->isInstance($request)) {
                 $arguments[] = $request;
+            } elseif ($param->getClass() && $param->getClass()->isInstance($this->app)) {
+                $arguments[] = $this->app;
             } elseif ($param->isDefaultValueAvailable()) {
                 $arguments[] = $param->getDefaultValue();
             //<Extension for DTO>

@@ -1,9 +1,12 @@
 <?php
 
-namespace Gophry\Provider\DTO;
+namespace Gophry\Provider;
 
 use \Pimple\Container;
 use \Pimple\ServiceProviderInterface;
+
+use \Gophry\Core\Exception\InvalidRequestException;
+use \Gophry\ControllerResolver;
 
 class DTOServiceProvider implements ServiceProviderInterface {
 

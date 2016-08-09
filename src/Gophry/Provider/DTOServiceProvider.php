@@ -5,7 +5,7 @@ namespace Gophry\Provider;
 use \Pimple\Container;
 use \Pimple\ServiceProviderInterface;
 
-use \Gophry\Core\Exception\InvalidRequestException;
+use \Gophry\Core\Exception\UnprocessableEntityException;
 use \Gophry\ControllerResolver;
 
 class DTOServiceProvider implements ServiceProviderInterface {
@@ -15,7 +15,7 @@ class DTOServiceProvider implements ServiceProviderInterface {
             return new ControllerResolver($app);
         });
 
-        $app['gophry.invalid.request.exception.class'] = InvalidRequestException::class;
+        $app['gophry.invalid.request.exception.class'] = UnprocessableEntityException::class;
     }
 
 }

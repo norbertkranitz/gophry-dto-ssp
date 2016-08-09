@@ -18,14 +18,6 @@ You can install the package with composer ([learn more](https://getcomposer.org/
 composer require norbertkranitz/gophry-dto-spp "dev-master"
 ```
 
-## Register
-
-You can simply register this service provider as a common Silex service provider ([learn more](http://silex.sensiolabs.org/doc/master/providers.html))
-
-```php
-$app->register(new DTOServiceProvider());
-```
-
 ## Configure
 
 ```php
@@ -33,6 +25,14 @@ $app['gophry.invalid.request.exception.class'] = \My\Exception\Class;
 ```
 
 > The first parameter of the exception is the message, the second one is the list of validation error.
+
+## Register
+
+You can simply register this service provider as a common Silex service provider ([learn more](http://silex.sensiolabs.org/doc/master/providers.html))
+
+```php
+$app->register(new DTOServiceProvider());
+```
 
 ## Simple use
 
